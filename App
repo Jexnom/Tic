@@ -1,0 +1,162 @@
+import java.util.Scanner;
+
+public class App {
+
+    public static void main(String[] args) throws Exception {
+        String[] border = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+        int turn = 1;
+        Scanner myObj = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("    BORDER");
+
+            for (int i = 0; i < border.length; i++) {
+
+                System.out.print(border[i]);
+                System.out.print("     ");
+                if (i == 2) {
+                    System.out.println("");
+                    System.out.println("");
+                } else if (i == 5) {
+                    System.out.println("");
+                    System.out.println("");
+                } else if (i == 8) {
+                    System.out.println("");
+                    System.out.println("");
+
+                }
+
+            }
+            if (turn % 2 == 1) {
+                while (true) {
+                    System.out.print("PLAYER X:");
+                    int x = myObj.nextInt();
+                    if (border[x - 1] != "o") {
+                        if (x > 0) {
+                            if (x < 10) {
+                                border[x - 1] = "x";
+                                turn++;
+                                break;
+                            }
+                        }
+                    } else {
+                        System.out.println(
+                                "This has been already taken.");
+                    }
+
+                }
+            }
+            System.out.println("    BORDER");
+
+            for (int i = 0; i < border.length; i++) {
+
+                System.out.print(border[i]);
+                System.out.print("     ");
+                if (i == 2) {
+                    System.out.println("");
+                    System.out.println("");
+                } else if (i == 5) {
+                    System.out.println("");
+                    System.out.println("");
+                } else if (i == 8) {
+                    System.out.println("");
+                    System.out.println("");
+
+                }
+            }
+            if (turn % 2 == 0) {
+                while (true) {
+                    System.out.print("PLAYER O:");
+                    int x = myObj.nextInt();
+                    if (border[x - 1] != "x") {
+                        if (x > 0) {
+                            if (x < 10) {
+                                border[x - 1] = "o";
+                                turn++;
+                                break;
+                            }
+                        }
+                    } else {
+                        System.out.println(
+                                "This has been already taken.");
+                    }
+
+                }
+            }
+            // winning condition
+            if (border[0] == "o" && border[1] == "o" && border[2] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[0] == "o" && border[3] == "o" && border[6] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[1] == "o" && border[4] == "o" && border[7] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[2] == "o" && border[5] == "o" && border[8] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[3] == "o" && border[4] == "o" && border[5] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[6] == "o" && border[7] == "o" && border[8] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[0] == "o" && border[4] == "o" && border[8] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            if (border[2] == "o" && border[4] == "o" && border[6] == "o") {
+                System.out.println("Player o has won.");
+                break;
+            }
+            // If player x won
+            if (border[0] == "x" && border[1] == "x" && border[2] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[0] == "x" && border[3] == "x" && border[6] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[1] == "x" && border[4] == "x" && border[7] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[2] == "x" && border[5] == "x" && border[8] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[3] == "x" && border[4] == "x" && border[5] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[6] == "x" && border[7] == "x" && border[8] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[0] == "x" && border[4] == "x" && border[8] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+            if (border[2] == "x" && border[4] == "x" && border[6] == "x") {
+                System.out.println("Player x has won.");
+                break;
+            }
+
+            // end of winnning condition
+            if (turn == 10) {
+                System.out.println("It's a draw.");
+                break;
+
+            }
+        }
+    }
+
+}
